@@ -2,6 +2,9 @@
 @import 'utils/vars';
 @import 'utils/reset';
 
+// THEME
+@import './theme';
+
 html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
@@ -62,6 +65,7 @@ li {
   padding: 0;
 }
 
+footer, // also footer if footer without section
 section,
 .section {
   position: relative;

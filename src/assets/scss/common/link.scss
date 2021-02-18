@@ -1,9 +1,9 @@
 .link {
   cursor: pointer;
+  text-decoration: underline;
   color: $purple-color;
   &:hover {
-    text-decoration: underline;
-    border-bottom: none;
+    text-decoration: none;
   }
   &.isWhite {
     border-bottom: 1px solid #ffffff;
@@ -21,6 +21,7 @@
   &.isActive,
   &.router-link-active,
   &.router-link-exact-active {
+    color: $purple-color-100;
     text-decoration: underline;
   }
 }
