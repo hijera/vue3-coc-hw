@@ -1,27 +1,34 @@
 import {
   createRouter,
-  createWebHashHistory,
-  createWebHistory
+  createWebHistory,
+  createWebHashHistory
 } from 'vue-router'
 
-import Home from './pages/home.vue'
-import About from './pages/about.vue'
-
-// const routerHistory = createWebHistory();
 const routerHistory = createWebHashHistory()
 
-const router = createRouter({
+import HomePage from './pages/home'
+import AboutPage from './pages/about'
+import NotFoundPage from './pages/notFound'
+
+const routers = createRouter({
   history: routerHistory,
   routes: [
     {
       path: '/',
-      component: Home
+      name: 'home',
+      component: HomePage
     },
     {
       path: '/about',
-      component: About
+      name: 'about',
+      component: AboutPage
+    },
+    {
+      path: '/:CatchAll(.*)',
+      name: '404',
+      component: NotFoundPage
     }
   ]
 })
 
-export default router
+export default routers
