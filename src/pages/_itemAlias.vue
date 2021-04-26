@@ -13,7 +13,7 @@
       </div>
 
       <div>
-        <router-link to="/" class="btn btnPrimary">Back to home</router-link>
+        <router-link to="/" class="btn btnWhite">Back to home</router-link>
       </div>
     </div>
   </div>
