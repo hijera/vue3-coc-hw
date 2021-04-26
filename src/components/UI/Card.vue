@@ -6,7 +6,7 @@
     <span class="card-name">{{ name }}</span>
     <span class="card-title">{{ title }}</span>
     <div class="card-body">
-      <slot></slot>
+      <slot name="body"></slot>
 
       <router-link
         v-if="link"
@@ -16,6 +16,7 @@
         >See more</router-link
       >
     </div>
+    <slot name="footer"></slot>
   </div>
 </template>
 
