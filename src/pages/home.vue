@@ -1,6 +1,6 @@
 <template>
-  <div class="md-body">
-    <div class="card__wrapper" v-for="item in items" :key="item.id">
+  <carousel :settings="settings" :breakpoints="breakpoints">
+    <slide class="card__wrapper" v-for="item in items" :key="item.id">
       <Card
         :name="`${item.lvl} lvl`"
         :title="item.title"
@@ -23,8 +23,13 @@
           </div>
         </template>
       </Card>
-    </div>
-  </div>
+    </slide>
+
+    <!-- addons -->
+    <template #addons>
+      <navigation />
+    </template>
+  </carousel>
 </template>
 
 <script>
@@ -32,11 +37,34 @@ import items from '@/seeders/items.js'
 
 import Card from '@/components/UI/Card'
 
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
+
 export default {
-  components: { Card },
+  components: {
+    Card,
+    Carousel,
+    Slide,
+    Navigation
+  },
   data() {
     return {
-      items: items
+      items: items,
+
+      // corousel
+      settings: {
+        itemsToShow: 2,
+        wrapAround: true,
+        snapAlign: 'center'
+      },
+      breakpoints: {
+        300: {
+          itemsToShow: 1
+        },
+        700: {
+          itemsToShow: 2
+        }
+      }
     }
   }
 }
