@@ -29,11 +29,15 @@ export default {
     }
   },
   created() {
-    const alias = this.$route.params.itemAlias
+    const alias = this.$route.params.itemAlias;
     const item = items.find(el => el.alias === alias)
-
-    this.item = item
-    console.log(item)
+    if (item)
+    {
+      this.item = item
+      console.log(item)
+    }
+    else
+      this.$router.push({path:'/404'});
   }
 }
 </script>

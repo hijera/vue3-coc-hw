@@ -30,11 +30,15 @@ const routers = createRouter({
       component: Item
     },
     {
-      path: '/:CatchAll(.*)',
+      path:  '/404',
       name: '404',
       component: NotFoundPage
     }
+  ],
+  redirect: [
+    {  ':CatchAll(.*)': '/404'}
   ]
 })
 
+/**/
 export default routers
